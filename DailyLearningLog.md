@@ -92,3 +92,8 @@
 ## 2025-11-25 TUE
 - refreshed my understanding of the Linux filesystem hierarchy and the purpose of the main directories under /. This time it felt much clearer why the structure exists the way it does — it’s surprisingly elegant once you see the logic behind it.
 - learned the basics of Red Hat’s package management tools: rpm for low-level package operations, and the higher-level managers (yum and its successor dnf) that handle dependency resolution. 
+
+## 2025-11-27 THU
+- practiced special permissions (`u+s`, `g+s`, `+t`) using `chmod` and saw how `setuid`, `setgid`, and the sticky bit change execution rights and behavior in shared environments.
+- reviewed how these bits layer on top of normal `rwx` permissions, including examples like how passwd safely uses setuid.
+- switched between users and groups to verify permission behavior for some proper first-hand experience.
