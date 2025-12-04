@@ -112,3 +112,6 @@
 - understood how `locate` works differently: it searches a prebuilt index instead of the live filesystem. It's extremely fast, but it won’t show newly created files until the database is updated with `sudo updatedb`.
 - compared them in practice: `find` is the tool for live, precise searches; `locate` is ideal for quick lookups when speed matters but freshness isn’t critical.
 
+## 2025-12-04 THU
+- tested rsync (e.g. `rsync -rv --delete source/ destination/` — without `--delete` it won’t remove files that exist only in destination/) and compared dirs with `diff -r`. `rsync` is one-directional and stateless, meaning it doesn’t track history or conflicts, can’t tell if both sides changed a file, and running it both ways can overwrite changes.
+- practiced vim again (via Vim Adventures) and picked up a few handy motions: `C`/`D` for editing to end-of-line, and `diw`/`ciw` for deleting or changing whole words.
