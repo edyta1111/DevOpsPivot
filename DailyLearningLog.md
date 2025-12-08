@@ -115,3 +115,12 @@
 ## 2025-12-04 THU
 - tested rsync (e.g. `rsync -rv --delete source/ destination/` — without `--delete` it won’t remove files that exist only in destination/) and compared dirs with `diff -r`. `rsync` is one-directional and stateless, meaning it doesn’t track history or conflicts, can’t tell if both sides changed a file, and running it both ways can overwrite changes.
 - practiced vim again (via Vim Adventures) and picked up a few handy motions: `C`/`D` for editing to end-of-line, and `diw`/`ciw` for deleting or changing whole words.
+
+## 2025-12-05 FRI
+- Reviewed basic network tools with quick tests:
+  - `ifconfig` to view interfaces/addresses (`ifconfig eth0`).
+  - `ip link` to inspect or toggle interfaces (`ip link set eth0 down / up`).
+  - `ping <host>` to check reachability and latency (`ping 8.8.8.8`).
+  - `traceroute <host>` to see the path packets take (`traceroute google.com`).
+  - `netstat -tulpn` to list listening ports and processes.
+  - `nslookup <domain>` for basic DNS lookups (`nslookup example.com`).
