@@ -150,6 +150,6 @@
 - practiced looping over arguments and finally internalized the difference between `$@` (proper word splitting) and `$*` (everything as one string). Also reinforced the habit of checking for missing arguments and printing usage instead of letting scripts fail without any notice.
 
 ## 2026-01-05 MON
-- started working on a script that creates users using command line arguments. The first argument was supposed to be a username and the rest should provide a name and be saved as a comment. I struggled a bit but found 2 solutions: 
-  1. Take first argument as username, use `shift` to take it out of equation, and store all remaining arguments as a comment with `$*`.
-  2. Take first argument as username and the remaining ones as a comment with `${@:2}`. I definitely need more time to understand that slicing syntax.
+- Started working on a script that creates users using command-line arguments. The first argument is the username, and the remaining arguments form the real name stored as a comment. I struggled at first but found two solutions:
+  1. Take the first argument as the username, use `shift` to remove it from the positional parameters, and store the remaining arguments as the comment using `$*`.
+  2. Take the first argument as the username and the remaining ones as the comment using `${@:2}`. I need more time to fully understand this positional-parameter slicing syntax.
