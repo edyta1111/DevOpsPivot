@@ -148,3 +148,8 @@
 ## 2026-01-02 FRI
 - went deeper into shell scripting fundamentals: how scripts receive arguments (`$0`, `$1`, `$2`, `$#`), how PATH affects command execution (and checking with `which`), and how to safely handle filenames using `basename` and `dirname`.
 - practiced looping over arguments and finally internalized the difference between `$@` (proper word splitting) and `$*` (everything as one string). Also reinforced the habit of checking for missing arguments and printing usage instead of letting scripts fail without any notice.
+
+## 2026-01-05 MON
+- started working on a script that creates users using command line arguments. The first argument was supposed to be a username and the rest should provide a name and be saved as a comment. I struggled a bit but found 2 solutions: 
+  1. Take first argument as username, use `shift` to take it out of equation, and store all remaining arguments as a comment with `$*`.
+  2. Take first argument as username and the remaining ones as a comment with `${@:2}`. I definitely need more time to understand that slicing syntax.
