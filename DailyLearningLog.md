@@ -153,3 +153,12 @@
 - Started working on a script that creates users using command-line arguments. The first argument is the username, and the remaining arguments form the real name stored as a comment. I struggled at first but found two solutions:
   1. Take the first argument as the username, use `shift` to remove it from the positional parameters, and store the remaining arguments as the comment using `$*`.
   2. Take the first argument as the username and the remaining ones as the comment using `${@:2}`. I need more time to fully understand this positional-parameter slicing syntax.
+
+## 2026-01-07 WED
+- I learned more about positional parameter expansion: `${@:start:length}`, the counting starts from 1, and the length refers to number of arguments. For example, for the command `./script.sh john John Doe Smith` there are the following results based on the set array slicing:
+  - `${@:2}` = John Doe Smith (everything from position 2 onward)
+  - `${@:1}` = john John Doe Smith (everything from position 1 onward)
+  - `${@:2:2}` = John Doe (2 parameters starting from position 2)
+  - `${@:3}` = Doe Smith (everything from position 3 onward)
+- I am getting more efficient at reading `man` pages and quickly finding what I need
+- each time I use `vim`, I learn something to optimize using it and saving time - I hope this means I'm becoming "THE" IT guy. Learned today: `{` / `}` for navigation, `ci"` to edit content between quotes, and `set nu!` to toggle displaying line numbers.
