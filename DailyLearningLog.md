@@ -167,3 +167,8 @@
 - learned about file descriptors: stdin (0), stdout (1), stderr (2). Practiced basic redirection with `>`, `<`, and `>>`. Understanding that pipes pass data between commands while redirection uses files helped clarify when to use each.
 - explored explicit file descriptor syntax: can redirect stdout and stderr separately (`command 1> output.txt 2> errors.txt`) or combine them (`command > file 2>&1`). Order matters - `2>&1` must come after stdout redirection.
 - discovered `/dev/null` for discarding unwanted output (e.g., `command 2> /dev/null` to suppress known errors). These redirection techniques will be essential for writing scripts that handle errors.
+
+## 2026-01-09 FRI
+- built a complete user creation script that ties together everything from the past week: argument handling, error checking with `${?}`, and I/O redirection. Used `&> /dev/null` to suppress verbose command output and keep the script's own messages clean.
+- implemented proper error handling by checking root privileges `([[ $UID -ne 0 ]])`, verifying arguments were provided, and validating that `useradd` and `passwd` succeeded before continuing. Each failure exits with a clear error message sent to `stderr` using `>&2`.
+- combined multiple concepts into one working tool: positional parameters for username/comment, password generation with d`ate +%s%N | sha256sum | head -c48`, and `passwd -e` to force password change on first login. The script now provides clean, essential output showing username, temporary password, and hostname - feels like building something actually useful.
