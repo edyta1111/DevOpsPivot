@@ -191,3 +191,6 @@
 - went deeper into bash functions, focusing on interaction with command-line arguments and how positional parameters are scoped inside functions.
 - practiced organizing scripts around functions and using `local` variables to avoid global leakage.
 - implemented simple backup logic before making file changes and added error handling that logs failures to syslog instead of stdout.
+
+## 2026-01-29 THU
+- learned and used `getopts` for option parsing in bash scripts. Added flags to a password generator script: `-v` to enable verbose output, `-s` to append a special character, and `-l <num>` to control password length. Much cleaner and more scalable than positional arguments.
