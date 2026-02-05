@@ -48,7 +48,7 @@ do
 	# Make user the UID of the account is at least 1000.
 	USERID=$(id -u ${USERNAME})
 	if [[ "${USERID}" -lt 1000 ]]
-	then 
+	then
 		echo "Refusing to remove the ${USERNAME} with UID ${USERID}" >&2
 		exit 1
 	fi
@@ -61,7 +61,7 @@ do
 		then
 			echo "Creating ${ARCHIVE_DIR} directory."
 			mkdir -p ${ARCHIVE_DIR}
-			if [[ "{?}" -ne 0 ]]
+			if [[ "${?}" -ne 0 ]]
 			then
 				echo "The archive directory ${ARCHIVE_DIR} could not be created" >&2
 				exit 1
@@ -73,8 +73,8 @@ do
 		ARCHIVE_FILE="${ARCHIVE_DIR}/${USERNAME}.tgz"
 		if [[ -d "${HOME_DIR}" ]]
 		then 
-			echo "Archiving ${HOME_DIR} to ${ARCHIVE_DIR}"
-			tar -zfc ${ARCHIVE_FILE} ${HOME_DIR} &> /dev/null
+			echo "Archiving ${HOME_DIR} to ${ARCHIVE_FILE}"
+			tar -zcf ${ARCHIVE_FILE} ${HOME_DIR} &> /dev/null
 			if [[ "${?}" -ne 0 ]]
 			then 
 				echo "Could not create ${ARCHIVE_FILE}" >&2
