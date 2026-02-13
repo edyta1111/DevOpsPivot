@@ -199,3 +199,7 @@
 - learned how `OPTIND` works together with `getopts`: after option parsing, `shift $((OPTIND - 1))` removes all processed flags and leaves only remaining positional arguments.
 - used this pattern to detect invalid extra arguments (`[[ $# -gt 0 ]]`) and fail fast with a `usage` message instead of ignoring user mistakes.
 - takeaway: `getopts` validates *options*, `OPTIND + shift` validates that nothing unexpected was passed.
+
+## 2026-02-13 FRI
+- practiced `cut`, `awk`, `sort`, and `uniq`  commands
+- build complex pipelines connecting those commands to get specific, sorted output, sometimes displaying unique results, sometimes counting repeated occurences.
