@@ -203,3 +203,7 @@
 ## 2026-02-13 FRI
 - practiced `cut`, `awk`, `sort`, and `uniq`  commands
 - build complex pipelines connecting those commands to get specific, sorted output, sometimes displaying unique results, sometimes counting repeated occurences.
+
+## 2026-02-14 SAT
+- created a script `show-attackers.sh` to capture IP addresses from failed login attempts and identify potential attackers. 
+- the course I'm doing used command `geoiplookup` to find IP's location but that command is no longer supported on CentOS, so as a workaround I used `curl -s ipinfo.io/${IP}/country`. I also excluded private IP ranges from the search.
