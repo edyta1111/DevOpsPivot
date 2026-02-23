@@ -211,3 +211,10 @@
 ## 2026-02-17 TUE
 - learned some basic VM management through `ssh`, together with saving hostnames and usernames in `/etc/hosts` and `~/.ssh/config` for easy use.
 - what I'm learning definitely sparks ideas for new machine setup scripts or ssh authentication script with new VMs. My horizons are definitely expanding. While it's not an actual learning log bullet, I'd like to note that I'm feeling really inspired with this work and it seems to be taking me places.
+
+## 2026-02-20 FRI
+- created a script to execute a single command on multiple servers at the same time using ssh
+
+## 2026-02-23 MON
+- went in depth on `getopts` and all the nuances regarding my `run-anywhere.sh` script. Learned how the arguments are being parsed via `getopts` and counted via `OPTIND` and how I can strip all the parsed options with `shift` and get to what I need.
+- I noticed I keep forgeting about exit statuses. I will work on making sure the user is informed if the particular funtion or command was successful or not. 
